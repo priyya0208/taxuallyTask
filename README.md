@@ -1,6 +1,15 @@
 # TaxuallyApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+This Application is a small responsive app in Angular. 
+It has the following Components:
+
+1. SignIn (User Authentication using firebase API).
+    The user would be able to signin using Firebase authentication system
+2. SignUp (Create the registration (if no user)).
+    If new user then User have option to signup. **On clicking Don't have an account? Sign up** it will redirect user to signup page
+3. File Upload Components : This component is completed from UI side once API is working it will work right now when user clicks on upload it shows error could not upload.
+4. **Technologies** : Angular, HTML, CSS, Bootstrap, Tyepscript, Firebase (Auth API), RxJS
 
 ## Development server
 
@@ -25,3 +34,5 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+

@@ -14,6 +14,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { AuthService } from "./shared/services/auth.service";
 import { HttpClientModule } from '@angular/common/http';
 import { UploadDetailsComponent } from './components/upload-details/upload-details.component';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './shared/services/filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,7 @@ import { UploadDetailsComponent } from './components/upload-details/upload-detai
     SignInComponent,
     SignUpComponent,
     UploadDetailsComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { UploadDetailsComponent } from './components/upload-details/upload-detai
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

@@ -38,7 +38,7 @@ export class AuthService {
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
         this.router.navigate(['/dashboard']);
-        alert('Signed successfully')
+        alert('Signed successfully(Kindly double-click if automatically redirection is not working)')
         this.SetUserData(result.user);
         
       }) .catch((error) => {

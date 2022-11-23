@@ -29,7 +29,8 @@
 
 <div class="card mt-3">
   <div class="card-header">List of Files</div>
-  <ul
+  <ng-container *ngIf="fileInfos else url">
+    <ul
     class="list-group list-group-flush"
     *ngFor="let file of fileInfos | async"
   >
@@ -37,4 +38,23 @@
       <a href="{{ file.url }}">{{ file.name }}</a>
     </li>
   </ul>
+  </ng-container>
+  <ng-template #url>
+   <div style="display:flex">
+    <input class="form-control left" type="text" name="search" [(ngModel)]="searchTerm" 
+    autocomplete="off"  placeholder="Start searching">
+    <button (click)="sortbytitle()">Sort</button>
+   </div> 
+    <ul
+    class="list-group list-group-flush"
+    *ngFor="let file  of fileURL | appFilter:searchTerm">
+  
+    <li class="list-group-item row">
+    <span class="col-3"><img src="https://via.placeholder.com/150/92c952"/></span>
+    <span class="col-6">{{ file.title }}</span>
+     
+    </li>
+  </ul>
+  </ng-template>
+  
 </div>

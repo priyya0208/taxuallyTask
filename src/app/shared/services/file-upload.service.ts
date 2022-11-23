@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class FileUploadService {
 
-  private baseUrl = 'http://localhost:8080';
+  private baseUrl = 'https://jsonplaceholder.typicode.com/photos';
 
   constructor(private http: HttpClient) { }
 
@@ -27,6 +27,6 @@ export class FileUploadService {
   }
 
   getFiles(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/files`);
+    return this.http.get(`${this.baseUrl}`);
   }
 }

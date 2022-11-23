@@ -15,8 +15,9 @@ export class UploadDetailsComponent {
   currentFile?: File;
   progress = 0;
   message = '';
-
+  searchTerm:any;
   fileInfos?: Observable<any>;
+  fileURL: any;
 
   constructor(private uploadService: FileUploadService) { }
 
@@ -24,6 +25,17 @@ export class UploadDetailsComponent {
     this.selectedFiles = event.target.files;
   }
 
+  ngOnInit():void{
+    this.uploadService.getFiles().subscribe({
+      next: (event: any) => {
+        console.log(event);
+        this.fileURL = event
+      },
+      error: (err: any) => {
+        
+      }
+    });
+  }
   upload(): void {
     this.progress = 0;
 
@@ -55,11 +67,16 @@ export class UploadDetailsComponent {
             this.currentFile = undefined;
           }
         });
+
+      
       }
 
       this.selectedFiles = undefined;
     }
   }
 
+  sortbytitle(){
+    this.fileURL.sort((a:any,b:any) => (a.title.toLowerCase() < b.title.toLowerCase()) ? -1 : ((b.title.toLowerCase() > a.title.toLowerCase()) ? 1 : 0));
+  }
 
 }

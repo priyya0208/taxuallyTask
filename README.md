@@ -9,7 +9,7 @@ It has the following Components:
 2. SignUp (Create the registration (if no user)).
     If new user then User have option to signup. **On clicking Don't have an account? Sign up** it will redirect user to signup page
 3. File Upload Components : This component is completed from UI side once API is working it will work right now when user clicks on upload it shows error could not upload.
-4. **Technologies** : Angular, HTML, CSS, Bootstrap, Tyepscript, Firebase (Auth API), RxJS
+4. **Technologies** : Angular, HTML, CSS, Bootstrap, Typescript, Firebase (Auth API), RxJS
 
 ## Development server
 

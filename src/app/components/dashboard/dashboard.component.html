@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="../../../assets/login.png" alt="" style="width:40px;" class="rounded-pill"> 
+    </a>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item"*ngIf="authService.userData as user"><a class="nav-link">
+        <div class="dropdown">
+          <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+            Welcome {{(user.displayName) ? user.displayName : 'User'}}
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" (click)="authService.SignOut()">
+              <i class="fas fa-sign-out-alt"></i>Log out
+            </a></li>
+            <li><span class="dropdown-item-text"><strong>{{user.email}}</strong></span></li>
+          </ul>
+        </div>
+      </a></li>
+      <li class="nav-item"></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Sidebar navigation -->
+<div class="container">
+  <div class="row">
+    <!-- Main content -->
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="inner-adjust">
+        <!-- Show user data when logged in -->
+        <div class="row" *ngIf="authService.userData as user">
+          <div class="col-md-12">
+            <div class="media">
+              <div class="media-body">               
+
+                <div style="width:600px">
+                  <div class="my-3">
+                    <h3></h3>
+                  </div>
+                
+                  <app-upload-details></app-upload-details>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+

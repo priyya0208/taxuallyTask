@@ -1,3 +1,5 @@
+//File upload will not fully work since i haven't created api service 
+//but from UI perspective it completed and it will be working once API will respond
 import { Component, OnInit } from '@angular/core';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
